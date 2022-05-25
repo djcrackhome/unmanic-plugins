@@ -236,8 +236,6 @@ class PluginStreamMapper(StreamMapper):
     def test_stream_needs_processing(self, stream_info: dict):
         if stream_info.get('codec_name').lower() in self.image_video_codecs:
             return False
-        elif stream_info.get('codec_name').lower() in ['h264']:
-            return False
         return True
 
     def custom_stream_mapping(self, stream_info: dict, stream_id: int):
